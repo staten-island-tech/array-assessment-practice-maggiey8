@@ -84,10 +84,25 @@ const titles = [
   "Little Women",
 ];
 
+
+
+
+function sortDate(a, b) {
+  let published = books.sort((a.publishDate,b.publishDate));
+  console.log(published)
+}
+
+books.forEach((el) => {
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
-
+  console.log(`${el.authorFirst} ${el.authorLast} wrote ${el.name} in ${el.publishDate}`)
+  sortDate(el, el);
+});
 //Sort books from oldest to most recent
+
+
+
+sortDate();
 
 //sort books alphabetically
 
