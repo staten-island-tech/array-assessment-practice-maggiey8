@@ -85,28 +85,34 @@ const titles = [
 ];
 
 
+const date = new Date();
+let year =  date.getFullYear();
 
-
-function sortDate(a, b) {
-  let published = books.sort((a.publishDate,b.publishDate));
-  console.log(published)
+function yearSince(x) {
+  return since = year - x.publishDate
 }
 
-books.forEach((el) => {
+
+/* books.forEach((el) => {
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
   console.log(`${el.authorFirst} ${el.authorLast} wrote ${el.name} in ${el.publishDate}`)
-  sortDate(el, el);
-});
+}); */
+
 //Sort books from oldest to most recent
 
-
-
-sortDate();
-
 //sort books alphabetically
+/* titles.sort()
+console.log(titles) */
 
 //Find who wrote War and Peace
+function findAuthor() {
+  let bookName = prompt("What is the title of the book you are looking for?")
+  const filterBook = books.filter((el) => el.name === bookName)
+  filterBook.forEach((el) =>  console.log(`${el.authorFirst} ${el.authorLast} wrote ${bookName}`))
+}
+
+findAuthor();
 
 //how many books were written before 1900?
 
@@ -115,3 +121,5 @@ sortDate();
 //was every book published within the last 100 years?
 
 //print a list of books that "includes" the genre historical
+/* const historical = books.filter((el) => el.genre.includes("historical") === true)
+console.log(historical) */
