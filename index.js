@@ -92,34 +92,64 @@ function yearSince(x) {
   return since = year - x.publishDate
 }
 
-
-/* books.forEach((el) => {
+books.forEach((el) => {
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
   console.log(`${el.authorFirst} ${el.authorLast} wrote ${el.name} in ${el.publishDate}`)
-}); */
+});
+
 
 //Sort books from oldest to most recent
+let sortAge = books.sort((a, b) => (a.publishDate - b.publishDate))
+console.log(sortAge)
 
 //sort books alphabetically
-/* titles.sort()
-console.log(titles) */
+titles.sort()
+console.log(titles)
 
 //Find who wrote War and Peace
-function findAuthor() {
-  let bookName = prompt("What is the title of the book you are looking for?")
+function findAuthor(x) {
+  let bookName = x
   const filterBook = books.filter((el) => el.name === bookName)
   filterBook.forEach((el) =>  console.log(`${el.authorFirst} ${el.authorLast} wrote ${bookName}`))
 }
 
-findAuthor();
+findAuthor("War and Peace");
 
 //how many books were written before 1900?
+function before(x) {
+  const before = books.filter((el) => el.publishDate < x)
+  console.log(before.length)
+}
+
+before(1900);
 
 //was there at least one book published within the last 100 years?
+function within() {
+  const within = books.filter((el) => yearSince(el) < 100)
+  if (within.length > 0)
+    console.log("Yes")
+  else 
+    console.log("No") 
+}
+
+within();
 
 //was every book published within the last 100 years?
+function withinEvery() {
+  const within = books.filter((el) => yearSince(el) < 100)
+  if (within.length === books.length)
+  console.log("Yes")
+  else 
+  console.log("No")
+}
+
+withinEvery();
 
 //print a list of books that "includes" the genre historical
-/* const historical = books.filter((el) => el.genre.includes("historical") === true)
-console.log(historical) */
+function genre(x) {
+  const genreWanted = books.filter((el) => el.genre.includes(x) === true)
+  console.log(genreWanted)
+}
+
+genre("historical");
