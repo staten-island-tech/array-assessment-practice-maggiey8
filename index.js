@@ -89,7 +89,7 @@ const date = new Date();
 let year =  date.getFullYear();
 
 function yearSince(x) {
-  return since = year - x.publishDate
+  return year - x.publishDate
 }
 
 books.forEach((el) => {
@@ -97,7 +97,6 @@ books.forEach((el) => {
 //"--- wrote --- in ---"
   console.log(`${el.authorFirst} ${el.authorLast} wrote ${el.name} in ${el.publishDate}`)
 });
-
 
 //Sort books from oldest to most recent
 let sortAge = books.sort((a, b) => (a.publishDate - b.publishDate))
