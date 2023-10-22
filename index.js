@@ -127,9 +127,9 @@ before(1900);
 function within(x) {
   const within = books.filter((el) => yearSince(el) < x)
   if (within.length > 0)
-    console.log(`Yes, there was at least one book published within the last ${x} years`)
+    console.log(`There was at least one book published within the last ${x} years`)
   else 
-    console.log(`No, there were no books published within the last ${x} years`) 
+    console.log(`There were no books published within the last ${x} years`) 
 }
 
 within(100);
@@ -138,9 +138,9 @@ within(100);
 function withinEvery(x) {
   const within = books.filter((el) => yearSince(el) < x)
   if (within.length === books.length)
-  console.log(`Yes, every book was published within the last ${x} years`)
+  console.log(`Every book was published within the last ${x} years`)
   else 
-  console.log(`No, not every book was published within the last ${x} years`)
+  console.log(`Not every book was published within the last ${x} years`)
 }
 
 withinEvery(100);
