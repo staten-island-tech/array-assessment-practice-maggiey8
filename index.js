@@ -108,9 +108,8 @@ console.log(titles)
 
 //Find who wrote War and Peace
 function findAuthor(x) {
-  let bookName = x
-  const filterBook = books.filter((el) => el.name === bookName)
-  filterBook.forEach((el) =>  console.log(`${el.authorFirst} ${el.authorLast} wrote ${bookName}`))
+  const filterBook = books.filter((el) => el.name === x)
+  filterBook.forEach((el) =>  console.log(`${el.authorFirst} ${el.authorLast} wrote ${x}`))
 }
 
 findAuthor("War and Peace");
