@@ -124,26 +124,26 @@ function before(x) {
 before(1900);
 
 //was there at least one book published within the last 100 years?
-function within() {
-  const within = books.filter((el) => yearSince(el) < 100)
+function within(x) {
+  const within = books.filter((el) => yearSince(el) < x)
   if (within.length > 0)
     console.log("Yes")
   else 
     console.log("No") 
 }
 
-within();
+within(100);
 
 //was every book published within the last 100 years?
-function withinEvery() {
-  const within = books.filter((el) => yearSince(el) < 100)
+function withinEvery(x) {
+  const within = books.filter((el) => yearSince(el) < x)
   if (within.length === books.length)
   console.log("Yes")
   else 
   console.log("No")
 }
 
-withinEvery();
+withinEvery(100);
 
 //print a list of books that "includes" the genre historical
 function genre(x) {
