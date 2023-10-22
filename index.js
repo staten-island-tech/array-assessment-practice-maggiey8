@@ -92,14 +92,14 @@ function yearSince(x) {
   return year - x.publishDate
 }
 
-books.forEach((el) => {
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
+books.forEach((el) => {
   console.log(`${el.authorFirst} ${el.authorLast} wrote ${el.name} in ${el.publishDate}`)
 });
 
 //Sort books from oldest to most recent
-let sortAge = books.sort((a, b) => (a.publishDate - b.publishDate))
+const sortAge = books.sort((a, b) => (a.publishDate - b.publishDate))
 console.log(sortAge)
 
 //sort books alphabetically
